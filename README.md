@@ -57,4 +57,16 @@ class MapService {
     return $this->service->getCoordinateByAddress($address);
   }
 }
+
+class Main {
+  public function main() {
+    // use google
+    $service = new MapService(new GoogleMap());
+    echo $service->getCoordinateByAddress($address);
+    
+    // use Bing
+    $service = new MapService(new BingMap());
+    echo $service->getCoordinateByAddress($address);
+  }
+}
 ```
